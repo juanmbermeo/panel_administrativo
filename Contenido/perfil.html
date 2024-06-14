@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta author="Daniel Fernandez">
-    <title>Clientes</title>
+    <title>Perfil de Usuario</title>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
     <link rel="stylesheet" href="CSS/style.css">
@@ -27,7 +27,7 @@
                     <a class="nav-link" href="user.html"><i class="fas fa-users"></i> Usuarios</a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="clientes.html"><i class="fas fa-user-friends"></i> Clientes</a>
+                    <a class="nav-link" href="Clientes.html"><i class="fas fa-user-friends"></i> Clientes</a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="categorias.html"><i class="fas fa-list"></i> Categorías</a>
@@ -44,37 +44,52 @@
             </ul>
         </div>
     </nav>
-
     <div id="content" class="container mt-4">
-        <h1>Gestión de Clientes</h1>
-        <table class="table table-bordered">
-            <thead class="thead-dark">
-                <tr>
-                    <th>Número de Documento</th>
-                    <th>Nombres</th>
-                    <th>Apellidos</th>
-                    <th>Email</th>
-                    <th>Celular</th>
-                    <th>Dirección</th>
-                </tr>
-            </thead>
-            <tbody>
-                <tr>
-                    <td>1077654321</td>
-                    <td>Maria</td>
-                    <td>Gomez</td>
-                    <td>maria@gmail.com</td>
-                    <td>3209876543</td>
-                    <td>Calle 123 #-13</td>
-                </tr>
-                <!-- Más filas de ejemplo -->
-            </tbody>
-        </table>
+        <h1>Perfil de Usuario</h1>
+        <div class="row">
+            <div class="col-md-4">
+                <div class="card">
+                    <img src="../img/user-pen-solid.svg" class="card-img-top p-5" alt="Foto de perfil" style="max-width: 50%; margin: 0 auto;">
+                    <div class="card-body text-center">
+                        <h5 class="card-title">Nombre del Usuario</h5>
+                        <p class="card-text" style="display: inline-block;">
+                            <img src="../img/envelope-regular.svg" alt="Correo electrónico" class="card-img" style="max-width: 20px; margin-right: 5px;">
+                            Correo electrónico: usuario@soy.sena.edu.co
+                        </p>                    
+                        <img src="../img/mobile-solid.svg" alt="telefono" class="card-img" style="max-width: 20px; margin-left: 10px;">
+                        <p class="card-text" style="display: inline-block;">Teléfono: +57 320 9378780</p> <br>
+                        <a href="">Cambiar contraseña</a>
+                    </div>
+                </div>
+            </div>
+            <div class="col-md-8">
+                <div class="card">
+                    <div class="card-body">
+                        <h5 class="card-title">Información Personal</h5>
+                        <form>
+                            <div class="form-group">
+                                <label for="nombre">Nombre</label>
+                                <input type="text" class="form-control" id="nombre" value="Nombre del Usuario">
+                            </div>
+                            <div class="form-group">
+                                <label for="correo">Correo electrónico</label>
+                                <input type="email" class="form-control" id="correo" value="usuario@soy.sena.edu.co">
+                            </div>
+                            <div class="form-group">
+                                <label for="telefono">Teléfono</label>
+                                <input type="text" class="form-control" id="telefono" value="+57 320 9378 780">
+                            </div>
+                            <button type="submit" class="btn btn-primary">Guardar Cambios</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
     <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-    
+   
 </body>
 </html>
