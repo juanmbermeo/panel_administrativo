@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Daniel Fernandez">
+    <title>Categorías</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="dashboard">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Panel Administrativo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="sidebarMenu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Panel inicial.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i> Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user.html"><i class="fas fa-users"></i> Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="clientes.html"><i class="fas fa-user-friends"></i> Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categorias.html"><i class="fas fa-list"></i> Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="container mt-4">
+        <h1>Gestión de Categorías</h1>
+        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addCategoryModal"><i class="fas fa-plus"></i> Agregar Categoría</button>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Codigo</th>
+                    <th>Nombre</th>
+                    <th>Imagen</th>
+                    <th>Fecha</th>
+                    <th>Descripción</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <!-- Aquí se llenarán las filas de la tabla con los datos de las categorías -->
+                <tr>
+                    <td>001</td>
+                    <td>Electrónica</td>
+                    <td>
+                      <div class="stat-icon">
+                        <i class="fas fa-image"></i>
+                      </div>
+                    </td>
+                    <td>10/06/2024</td>
+                    <td>Dispositivos electrónicos y gadgets</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm btn-delete" data-id="1"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>002</td>
+                    <td>Hogar</td>
+                    <td>
+                      <div class="stat-icon">
+                        <i class="fas fa-image"></i>
+                      </div>
+                    </td>
+                    <td>10/06/2024</td>
+                    <td>Limpiador de pisos</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm btn-delete" data-id="1"><i class="fas fa-trash-alt"></i> Eliminar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <!-- Modal para agregar categoría -->
+    <div class="modal fade" id="addCategoryModal" tabindex="-1" aria-labelledby="addCategoryModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addCategoryModalLabel">Agregar Categoría</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addCategoryForm">
+                      <div class="form-group">
+                        <label for="categoryId">Codigo</label>
+                        <input type="number" class="form-control" id="categoryId" required>
+                      </div>
+                        <div class="form-group">
+                            <label for="categoryName">Nombre</label>
+                            <input type="text" class="form-control" id="categoryName" required>
+                        </div>
+                        <div class="form-group">
+                          <label for="categoryImg">Imagen</label>
+                          <input type="image" class="form-control" id="categoryImg" required>
+                      </div>
+                      <div class="form-group">
+                        <label for="categoryFecha">Fecha</label>
+                        <input type="date" class="form-control" id="categoryFecha" required>
+                    </div>
+                        <div class="form-group">
+                            <label for="categoryDescription">Descripción</label>
+                            <textarea class="form-control" id="categoryDescription" rows="3" required></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

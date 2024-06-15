@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta author="Daniel Fernandez">
+    <title>Usuarios</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="CSS/style.css">
+</head>
+<body class="dashboard">
+    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+        <a class="navbar-brand" href="#">Panel Administrativo</a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#sidebarMenu" aria-controls="sidebarMenu" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="sidebarMenu">
+            <ul class="navbar-nav mx-auto">
+                <li class="nav-item">
+                    <a class="nav-link" href="Panel inicial.html"><i class="fas fa-tachometer-alt"></i> Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="perfil.html"><i class="fas fa-user"></i> Perfil</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="user.html"><i class="fas fa-users"></i> Usuarios</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="Clientes.html"><i class="fas fa-user-friends"></i> Clientes</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="categorias.html"><i class="fas fa-list"></i> Categorías</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="productos.html"><i class="fas fa-box"></i> Productos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pedidos.html"><i class="fas fa-shopping-cart"></i> Pedidos</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="../index.html"><i class="fas fa-sign-out-alt"></i> Cerrar Sesión</a>
+                </li>
+            </ul>
+        </div>
+    </nav>
+
+    <div id="content" class="container mt-4">
+        <h1>Gestión de Usuarios</h1>
+        <button class="btn btn-primary mb-3" data-toggle="modal" data-target="#addUserModal"><i class="fas fa-plus"></i> Agregar Usuario</button>
+        <table class="table table-bordered">
+            <thead class="thead-dark">
+                <tr>
+                    <th>Número de Documento</th>
+                    <th>Nombres</th>
+                    <th>Apellidos</th>
+                    <th>Tipo de Rol</th>
+                    <th>Email</th>
+                    <th>Celular</th>
+                    <th>Acciones</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>1077123456</td>
+                    <td>Juan</td>
+                    <td>Bermeo</td>
+                    <td>Admin</td>
+                    <td>juan@gmail.com</td>
+                    <td>3134567890</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm btn-delete" data-id="1"><i class="fas fa-trash-alt"></i> Deshabilitar</button>
+                    </td>
+                </tr>
+                <tr>
+                    <td>1077890123</td>
+                    <td>Jose</td>
+                    <td>Gomez</td>
+                    <td>Editor</td>
+                    <td>jose@gmail.com</td>
+                    <td>3123456789</td>
+                    <td>
+                        <button class="btn btn-warning btn-sm"><i class="fas fa-edit"></i> Editar</button>
+                        <button class="btn btn-danger btn-sm btn-delete" data-id="1"><i class="fas fa-trash-alt"></i> Deshabilitar</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+
+    <div class="modal fade" id="addUserModal" tabindex="-1" aria-labelledby="addUserModalLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="addUserModalLabel">Agregar Usuario</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body">
+                    <form id="addUserForm">
+                        <div class="form-group">
+                            <label for="documentNumber">Número de Documento</label>
+                            <input type="text" class="form-control" id="documentNumber" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="firstName">Nombres</label>
+                            <input type="text" class="form-control" id="firstName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="lastName">Apellidos</label>
+                            <input type="text" class="form-control" id="lastName" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="role">Tipo de Rol</label>
+                            <select class="form-control" id="role" required>
+                                <option>Admin</option>
+                                <option>Editor</option>
+                            </select>
+                        </div>
+                        <div class="form-group">
+                            <label for="email">Email</label>
+                            <input type="email" class="form-control" id="email" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="cellPhone">Celular</label>
+                            <input type="text" class="form-control" id="cellPhone" required>
+                        </div>
+                        <div class="form-group">
+                            <label for="password">Contraseña</label>
+                            <input type="password" class="form-control" id="password" required>
+                        </div>
+                        <button type="submit" class="btn btn-primary">Guardar</button>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.5.4/dist/umd/popper.min.js"></script>
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    
+</body>
+</html>

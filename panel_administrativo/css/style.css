@@ -1,0 +1,15 @@
+body.login {
+    background-color: #65ed99;
+    background: linear-gradient(to right, #47e0e0, #65ed99);
+}
+.bg {
+    background-image: url(../img/img1.avif);
+    background-position: center;
+    background-size: cover;
+}
+
+@media screen and (min-width:992px) {
+    .navbar .container-fluid, .navbar-expand-lg .navbar-collapse{
+        flex-direction: column;
+    }
+}
